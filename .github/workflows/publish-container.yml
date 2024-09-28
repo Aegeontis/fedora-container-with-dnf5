@@ -20,7 +20,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Building the Docker image
-        run: docker build -t ghcr.io/${{ github.repository_owner }}/fedora-with-dnf5:latest .
+        run: docker build -t ghcr.io/aegeontis/fedora-with-dnf5:latest .
 
       - name: Pushing image to registry
-        run: docker push ghcr.io/${{ github.repository_owner }}/fedora-with-dnf5:latest
+        run: docker push ghcr.io/aegeontis/fedora-with-dnf5:latest
