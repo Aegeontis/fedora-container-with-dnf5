@@ -1,5 +1,4 @@
 name: Build and Push Fedora Image with DNF5
-
 on:
   schedule:
     - cron: '0 0 * * *'
@@ -8,6 +7,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    # needed to push containers
+    permissions:
+      packages: write
     steps:
       - name: Checking out repository
         uses: actions/checkout@v3
