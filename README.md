@@ -6,7 +6,7 @@ Updated every day at midnight.
 `podman run -it ghcr.io/aegeontis/fedora-with-dnf5:latest`
 
 ## Run with docker
-`podman run -it ghcr.io/aegeontis/fedora-with-dnf5:latest`
+`docker run -it ghcr.io/aegeontis/fedora-with-dnf5:latest`
 
 ## Use in Dockerfile:
 ```
