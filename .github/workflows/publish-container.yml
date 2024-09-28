@@ -1,0 +1,26 @@
+name: Build and Push Fedora Image with DNF5
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checking out repository
+        uses: actions/checkout@v3
+
+      - name: Logging in to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Building the Docker image
+        run: docker build -t ghcr.io/${{ github.repository_owner }}/fedora-with-dnf5:latest .
+
+      - name: Pushing image to registry
+        run: docker push ghcr.io/${{ github.repository_owner }}/fedora-with-dnf5:latest
