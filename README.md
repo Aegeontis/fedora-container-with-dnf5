@@ -1,3 +1,6 @@
+# ARCHIVED
+Since dnf5 is now the default on Fedora 41, this custom container is no longer needed.
+
 # fedora-with-dnf5
 Stock fedora container with dnf5 as the default package manager.  
 Updated every day at midnight.  
